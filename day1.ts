@@ -1,4 +1,4 @@
-function day1part1(input: string){
+function day1(input: string){
     let eachElf = input.split('\n\n');
     let totalElf = Int32Array.from(eachElf.map(addTheElf));
     totalElf = totalElf.sort();
