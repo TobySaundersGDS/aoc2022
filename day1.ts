@@ -5,7 +5,7 @@ function day1(input: string){
     totalElf = totalElf.reverse();
     let max = totalElf[0]
     let max3 = totalElf[0]+totalElf[1]+totalElf[2];
-    console.log(max);
+    console.log(max+' '+max3);
 }
 function addTheElf( theElf: string): number{
     let food = theElf.split('\n');
@@ -21,4 +21,4 @@ function addTheFood(item, index, food){
 }
 
 const input = process.argv[2];
-day1part1(input);
+day1(input);
