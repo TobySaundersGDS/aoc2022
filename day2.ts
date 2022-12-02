@@ -1,14 +1,13 @@
-let shapes1 = {
+let strategy1 = {
     'X': {'A': 4, 'B':1, 'C': 7 }, //rock
     'Y': {'A': 8, 'B':5, 'C': 2 }, //paper
     'Z': {'A': 3, 'B':9, 'C': 6 } //scissors
 }
-let shapes2 = {
+let strategy2 = {
     'X': {'A': 3, 'B':1, 'C': 2 }, //lose
     'Y': {'A': 4, 'B':5, 'C': 6 }, //draw
     'Z': {'A': 8, 'B':9, 'C': 7 } //win
 }
-
 function match(rounds: string){
     let fights = rounds.split('\n');
     let points1 = Int32Array.from(fights.map(score1));
@@ -17,14 +16,10 @@ function match(rounds: string){
     console.log(points2.reduce(tot));
 }
 function score1(fight: String){
-    let myShape = fight[2];
-    let theirShape = fight[0];
-    return shapes1[myShape][theirShape];
+    return strategy1[fight[2]][fight[0]];
 }
 function score2(fight: String){
-    let myShape = fight[2];
-    let theirShape = fight[0];
-    return shapes2[myShape][theirShape];
+    return strategy2[fight[2]][fight[0]];
 }
 function tot(accumulator, currentValue) {
   return accumulator + currentValue;
