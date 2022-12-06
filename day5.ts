@@ -5,7 +5,7 @@ fetchInput(url).then((data) => {
         let crates:string[][] = new Array();
         let crates2:string[][] = new Array();
         makeCrates(data.substring(0, data.indexOf('m') ), crates, crates2);
-        moveCrates(data.substring( data.indexOf('m') ).trim(), crates, crates2);
+        return moveCrates(data.substring( data.indexOf('m') ).trim(), crates, crates2);
     });
 
 function moveCrates(moves: string, crates:string[][], crates2:string[][]):string {
